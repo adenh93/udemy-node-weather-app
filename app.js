@@ -1,12 +1,20 @@
 require("dotenv").config();
 const request = require("request");
-const secret = process.env.SECRET_KEY;
+
+const darkSkySecret = process.env.DARK_SKY_SECRET;
+const mapSecret = process.env.MAP_SECRET;
 
 const latLong = "37.8267,-122.4233";
 const exclude = "minutely,hourly,alerts,flags";
-const url = `https://api.darksky.net/forecast/${secret}/${latLong}?exclude=${exclude}&units=si`;
+const weatherUrl = `https://api.darksky.net/forecast/${darkSkySecret}/${latLong}?exclude=${exclude}&units=si`;
+const locationUrl = `https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?access_token=${mapSecret}`;
 
-request({ url, json: true }, (err, res) => {
+request({ url: locationUrl, json: true }, (err, res) => {
+  const { center } = res.body.features[0];
+  console.log(...center);
+});
+
+request({ url: weatherUrl, json: true }, (err, res) => {
   const { timezone, currently, daily } = res.body;
   const { temperature, precipProbability } = currently;
   const { summary } = daily.data[0];
