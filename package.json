@@ -19,5 +19,8 @@
   "homepage": "https://github.com/adenh93/udemy-node-weather-app#readme",
   "dependencies": {
     "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0"
   }
 }
