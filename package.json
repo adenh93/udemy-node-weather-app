@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/adenh93/udemy-node-weather-app/issues"
   },
-  "homepage": "https://github.com/adenh93/udemy-node-weather-app#readme"
+  "homepage": "https://github.com/adenh93/udemy-node-weather-app#readme",
+  "dependencies": {
+    "request": "^2.88.0"
+  }
 }
