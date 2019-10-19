@@ -12,7 +12,11 @@ const geocode = (location, callback) => {
       callback("No location results found with the search term.", null);
     } else {
       const { center, place_name } = res.body.features[0];
-      callback(null, { location: place_name, coordinates: [...center] });
+      callback(null, {
+        location: place_name,
+        lat: center[1],
+        long: center[0]
+      });
     }
   });
 };
