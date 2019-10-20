@@ -19,6 +19,7 @@
   "homepage": "https://github.com/adenh93/udemy-node-weather-app#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "hbs": "^4.0.6",
     "request": "^2.88.0"
   },
   "devDependencies": {
