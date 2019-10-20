@@ -37,6 +37,20 @@ app.get("/help", (req, res) => {
   });
 });
 
+app.get("/help/*", (req, res) => {
+  res.render("404", {
+    title: "404: Help article not found",
+    message: "The help article you requested was not found!"
+  });
+});
+
+app.get("*", (req, res) => {
+  res.render("404", {
+    title: "404: Page not found",
+    message: "The page you requested was not found!"
+  });
+});
+
 app.get("/weather", (req, res) => {
   res.send({ location: "Melbourne, Victoria, Australia", forecast: "Sunny" });
 });
