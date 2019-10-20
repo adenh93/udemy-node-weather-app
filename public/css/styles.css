@@ -4,13 +4,14 @@ body {
   max-width: 650px;
   margin: 0 auto;
   padding: 0 16px;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-footer {
-  color: #888;
-  border-top: 1px solid #eee;
-  margin-top: 16px;
-  padding: 16px 0;
+.main-content {
+  flex-grow: 1;
 }
 
 header {
@@ -24,11 +25,18 @@ header a {
   text-decoration: none;
 }
 
-img {
-  width: 200px;
-}
-
 h1 {
   font-size: 64px;
   margin-bottom: 16px;
+}
+
+.portrait {
+  width: 250px;
+}
+
+footer {
+  color: #888;
+  border-top: 1px solid #eee;
+  margin-top: 16px;
+  padding: 16px 0;
 }
