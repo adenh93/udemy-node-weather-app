@@ -44,15 +44,24 @@ app.get("/help/*", (req, res) => {
   });
 });
 
+app.get("/weather", (req, res) => {
+  if(!req.query.address) {
+    return res.send({
+      error: 'You must provide an address.'
+    })
+  }
+
+  res.send({
+    address: req.query.address, 
+    location: "Melbourne, Victoria, Australia", 
+    forecast: "Sunny" });
+});
+
 app.get("*", (req, res) => {
   res.render("404", {
     title: "404: Page not found",
     message: "The page you requested was not found!"
   });
-});
-
-app.get("/weather", (req, res) => {
-  res.send({ location: "Melbourne, Victoria, Australia", forecast: "Sunny" });
 });
 
 app.listen(3000, () => {
