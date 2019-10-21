@@ -4,7 +4,7 @@
   "description": "A repository to follow along with the Weather App example in https://www.udemy.com/course/the-complete-nodejs-developer-course-2/",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/app.js"
   },
   "repository": {
     "type": "git",
@@ -13,9 +13,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/adenh93/udemy-node-weather-app/issues"
-  },
   "homepage": "https://github.com/adenh93/udemy-node-weather-app#readme",
   "dependencies": {
     "express": "^4.17.1",

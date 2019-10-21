@@ -12,7 +12,7 @@ const searchForecast = address => {
   messageOne.textContent = "Loading weather forecast...";
   messageTwo.textContent = "";
 
-  fetch(`http://localhost:3000/weather?address=${address}`).then(response =>
+  fetch(`/weather?address=${address}`).then(response =>
     response.json().then(({ error, forecast, location }) => {
       if (error) {
         return (messageOne.textContent = error);
